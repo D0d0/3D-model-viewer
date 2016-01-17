@@ -61,7 +61,7 @@ namespace Project1 {
 
 			this->coreN = gcnew Core(pictureBox1);
 			this->file = false;
-			if (args->Length >= 1){
+			if (args->Length >= 1) {
 				this->coreN->loadFile(args[0]);
 				this->coreN->drawPicture();
 				this->Text = ".obj file browser: " + args[0];
@@ -564,7 +564,7 @@ namespace Project1 {
 	}
 
 	private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		if (checkBox1->Checked){
+		if (checkBox1->Checked) {
 			trackBar2->Value = trackBar1->Value;
 		}
 		this->coreN->changeScale(trackBar1->Value, trackBar2->Value);
@@ -572,7 +572,7 @@ namespace Project1 {
 	}
 
 	private: System::Void trackBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
-		if (checkBox1->Checked){
+		if (checkBox1->Checked) {
 			trackBar2->Value = trackBar1->Value;
 		}
 		this->coreN->changeScale(trackBar1->Value, trackBar2->Value);
@@ -580,7 +580,7 @@ namespace Project1 {
 	}
 
 	private: System::Void trackBar2_Scroll(System::Object^  sender, System::EventArgs^  e) {
-		if (checkBox1->Checked){
+		if (checkBox1->Checked) {
 			trackBar1->Value = trackBar2->Value;
 		}
 		this->coreN->changeScale(trackBar1->Value, trackBar2->Value);
@@ -599,19 +599,19 @@ namespace Project1 {
 	}
 
 	private: System::Void Form1_DragEnter(System::Object^  sender, System::Windows::Forms::DragEventArgs^  e) {
-		if (e->Data->GetDataPresent(DataFormats::FileDrop)){
+		if (e->Data->GetDataPresent(DataFormats::FileDrop)) {
 			e->Effect = DragDropEffects::Copy;
 		}
 	}
 
 	private: System::Void pictureBox1_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		if (e->Button == Windows::Forms::MouseButtons::Left){
+		if (e->Button == Windows::Forms::MouseButtons::Left) {
 			this->mouseDownLoc = e->Location;
 		}
 	}
 
 	private: System::Void pictureBox1_MouseMove(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
-		if (e->Button == Windows::Forms::MouseButtons::Left){
+		if (e->Button == Windows::Forms::MouseButtons::Left) {
 			Point currentMousePos = e->Location;
 			this->newLocation.X = currentMousePos.X - this->mouseDownLoc.X;
 			this->newLocation.Y = currentMousePos.Y - this->mouseDownLoc.Y;
@@ -710,30 +710,30 @@ namespace Project1 {
 	}
 
 	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		try{
+		try {
 			this->coreN->setLightX(-Convert::ToInt32(textBox1->Text));
 			this->coreN->drawPicture();
 		}
-		catch (Exception^ e){
+		catch (Exception^ e) {
 
 		}
 	}
 	private: System::Void textBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		try{
+		try {
 			this->coreN->setLightY(-Convert::ToInt32(textBox2->Text));
 			this->coreN->drawPicture();
 		}
-		catch (Exception^ e){
+		catch (Exception^ e) {
 
 		}
 	}
 
 	private: System::Void textBox3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		try{
+		try {
 			this->coreN->setLightZ(Convert::ToInt32(textBox3->Text));
 			this->coreN->drawPicture();
 		}
-		catch (Exception^ e){
+		catch (Exception^ e) {
 
 		}
 	}

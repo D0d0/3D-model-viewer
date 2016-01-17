@@ -1,10 +1,10 @@
-#include "Facy.h"
+#include "Faces.h"
 #include "Face.h"
 
 using namespace std;
 using namespace System;
 using namespace System::Collections::Generic;
 
-Facy::Facy(){
+Faces::Faces() {
 	this->faces = gcnew List<Face^>;
 }

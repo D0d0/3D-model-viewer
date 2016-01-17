@@ -1,19 +1,18 @@
 #pragma once
-#include "Vertexy.h"
-#include "Facy.h"
+#include "Vertices.h"
+#include "Faces.h"
 
 using namespace std;
 using namespace System;
 
-ref class fileM{
+ref class fileM {
 	String^ path;
-	Vertexy^ vertexs;
-	Facy^ face;
+	Vertices^ vertices;
+	Faces^ faces;
 public:
 	fileM(String^ filePath);
 	void loadFile();
 	array<String^>^ parse(String^ entry);
-	Vertexy^ getVertexy(){ return vertexs; }
-	Facy^ getFace(){ return face; }
+	Vertices^ getVertices() { return vertices; }
+	Faces^ getFaces() { return faces; }
 };
-

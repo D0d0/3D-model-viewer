@@ -1,8 +1,8 @@
 #pragma once
 
 #include "fileM.h"
-#include "Vertexy.h"
-#include "Facy.h"
+#include "Vertices.h"
+#include "Faces.h"
 #include "Face.h"
 
 using namespace std;
@@ -12,11 +12,11 @@ using namespace System::Windows::Forms;
 using namespace System::Collections::Generic;
 using namespace System::Windows::Media::Media3D;
 
-ref class Core{
+ref class Core {
 	fileM^ file;
 	PictureBox^ pictureBox;
-	Vertexy^ vertexy;
-	Facy^ face;
+	Vertices^ vertexy;
+	Faces^ face;
 	Double^ xSize, ySize, xPosition, yPosition, zPosition;
 	Int32 xDiff, yDiff, lightX, lightY, lightZ;
 	Graphics^ g;
@@ -63,10 +63,10 @@ public:
 	void setRotationX(bool x);
 	void setRotationY(bool y);
 	void setRotationZ(bool z);
-	void setLightX(int X){ this->lightX = X/* + xPosition*/; }
-	void setLightY(int Y){ this->lightY = Y/* + yPosition*/; }
-	void setLightZ(int Z){ this->lightZ = Z /*- this->zPosition*/; }
-	void setColor(Color^ c){ this->objectColor = c; }
-	double getAngle(){ return this->rot->Angle; };
-	bool isRotating(){ return this->rotation; }
+	void setLightX(int X) { this->lightX = X/* + xPosition*/; }
+	void setLightY(int Y) { this->lightY = Y/* + yPosition*/; }
+	void setLightZ(int Z) { this->lightZ = Z /*- this->zPosition*/; }
+	void setColor(Color^ c) { this->objectColor = c; }
+	double getAngle() { return this->rot->Angle; };
+	bool isRotating() { return this->rotation; }
 };
