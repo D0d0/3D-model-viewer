@@ -250,7 +250,6 @@ void Core::drawPicture() {
 	Vector3D^ vec = gcnew Vector3D(this->lightX, this->lightY, this->lightZ);
 	this->faceList->Sort(gcnew Comparison<Face^>(compatorM));
 	vec->Normalize();
-	double farba;
 	for each(Face^ oneFace in this->faceList) {
 		if (oneFace->getNormalizedVector()->Z >= 0) {
 			double^ color = Vector3D::DotProduct((Vector3D)vec, (Vector3D)oneFace->getNormalizedVector());
